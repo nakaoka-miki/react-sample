@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Counter = ()=>{
     const [count,steCount]=useState(0)
@@ -9,6 +9,28 @@ const Counter = ()=>{
     const countDown =()=>{
         steCount(prevState=> prevState-1)
     }
+
+     useEffect(()=>{
+        console.log("current count:",count)},[count])
+
+
+    // // 毎回実行される
+    // useEffect(()=>{
+    //     console.log(count)
+    // })
+
+    // // 初回レンダリング後のみ実行される
+    // useEffect(()=>{
+    //     console.log(count)},[])
+
+    // Triggerが変更される度に実行される
+    // useEffect(()=>{
+    //     console.log(count)},[trigger])
+
+    // // Trigger１かTrigger２が変更される度に実行される
+    // useEffect(()=>{
+    //     console.log(count)
+    // },[trigger1,trigger2])
 
     return(  
      <div>
