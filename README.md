@@ -1,71 +1,59 @@
-# Getting Started with Create React App
+下記のyoutubeまとめ
+URL：https://youtube.com/playlist?list=PLX8Rsrpnn3IWPoM7-1YPDksRRkamRY25k&si=v9HVlkWOMzuBM2sz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+●Reactとは
+UIライブラリ
+コンポーネントという概念が特徴的（見た目と機能を持つUI部品）
+コンポーネントを組み合わせて画面を作成していく
 
-## Available Scripts
+●JSXとは
+JavaScriptの拡張言語
+HTMEライクの記述＋JavaScriptのような構文が使える
+JSXは最終的にReact要素を生成する
 
-In the project directory, you can run:
+●JSXの基本文法
+・Reactライブラリをimport
+・return文の中がJSX構文
+・キャメルケースで記述
+・{}内で変数を扱える
+・閉じタグが必要
+・JSXは必ず階層構造、最上位コンポーネントは並列できない
+　→並列で囲む必要がある場合は「React.Fragment（省略可）」を使用する
 
-### `npm start`
+例）
+import React from 'react';
+const Thumbnail = () =>{
+    const caption = '見本'
+    const imagePath = '/img/mihon.png'
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    return (
+        <div>
+         <p>{caption}</p>
+         <img src={imagePath} alt={'例'} />
+        </div>
+    )
+}
+export defalt Thumbnail
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+●コンポーネント基本使用法
+・ファイル名は大文字
+・子コンポーネントでexport
+・親コンポーネントでimport
+・propsでデータを受け渡す
+・同じコンポーネントはいくつでも呼び出しできる
+　　
+●propsについて
+・子コンポーネントの引数にpropsを指定
+・親から子にデータを渡す
+・propsのデータはz{}に記述
+・渡せるデータはなんでも可（文字列、数値、真偽値、配列、オブジェクト、日時、変数など）
+・文字列は{}無しでもOK
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+●stateについて
+・React コンポーネントで管理される状態
+・state が更新されると、コンポーネントは再レンダリング
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# react-sample
+●propsとstateの違い
+・propsは引数のようなコンポーネントに渡される値
+・stateはコンポーネントの内部の宣言・制御される値
